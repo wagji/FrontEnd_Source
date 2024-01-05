@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        #wrap {
+            border: 1px solid red;
+            width: 95%;
+            margin: 0 auto;
+            height: 850px;
+        }
+        
+        header {
+            border: 1px solid purple;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .image-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            z-index: 1;
+        }
+        
+        .text-overlay span {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .i1,
+        .i2 {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .u1 {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+        
+        .u1 li {
+            margin-right: 20px;
+        }
+        
+        .u1 a {
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="wrap">
+        <header>
+            <div class="image-container">
+                <img class="i1" src="img/logo.png" alt="logo" />
+                <div class="text-overlay">
+                    <span>자유게시판</span>
+                    <span>기타연주</span>
+                    <span>공동구매</span>
+                    <span>연주회 안내</span>
+                    <span>회원게시판</span>
+                </div>
+                <img class="i2" src="img/main_menu_bg.png" alt="moto" />
+            </div>
+
+            <ul class="u1">
+                <li><a href="#">로그인</a>&emsp;|</li>
+                <li><a href="#">회원가입</a>&emsp;|</li>
+                <li><a href="#">사이트맵</a>&emsp;|</li>
+                <li><a href="#">회사소개</a></li>
+            </ul>
+        </header>
+    </div>
+
+</body>
+
+</html>

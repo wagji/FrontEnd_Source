@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page with Guestbook</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .options {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    #guestbook {
+      margin-top: 20px;
+    }
+
+    #guestbook p {
+      border-bottom: 1px solid #ccc;
+      padding: 8px 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2 style="text-align: center;">Login</h2>
+  <label for="username"><b>Username</b></label>
+  <input type="text" placeholder="Enter your username" name="username" required>
+
+  <label for="password"><b>Password</b></label>
+  <input type="password" placeholder="Enter your password" name="password" required>
+
+  <button type="button" onclick="login()">Login</button>
+
+  <div class="options">
+    <a href="#" onclick="showSignUpForm()">Sign Up</a>
+    <a href="#" onclick="showForgotUsernameForm()">Forgot Username</a>
+    <a href="#" onclick="showForgotPasswordForm()">Forgot Password</a>
+  </div>
+</div>
+
+<div id="signupForm" class="container" style="display: none;">
+  <h2 style="text-align: center;">Sign Up</h2>
+  <label for="newUsername"><b>New Username</b></label>
+  <input type="text" placeholder="Enter your new username" name="newUsername" required>
+
+  <label for="newPassword"><b>New Password</b></label>
+  <input type="password" placeholder="Enter your new password" name="newPassword" required>
+
+  <button type="button" onclick="signUp()">Sign Up</button>
+
+  <a href="#" onclick="hideSignUpForm()">Cancel</a>
+</div>
+
+<div id="forgotUsernameForm" class="container" style="display: none;">
+  <h2 style="text-align: center;">Forgot Username</h2>
+  <label for="email"><b>Email</b></label>
+  <input type="email" placeholder="Enter your email" name="email" required>
+
+  <button type="button" onclick="recoverUsername()">Recover Username</button>
+
+  <a href="#" onclick="hideForgotUsernameForm()">Cancel</a>
+</div>
+
+<div id="forgotPasswordForm" class="container" style="display: none;">
+  <h2 style="text-align: center;">Forgot Password</h2>
+  <label for="username"><b>Username</b></label>
+  <input type="text" placeholder="Enter your username" name="username" required>
+
+  <button type="button" onclick="recoverPassword()">Recover Password</button>
+
+  <a href="#" onclick="hideForgotPasswordForm()">Cancel</a>
+</div>
+
+<div id="guestbook" class="container" style="display: none;">
+  <h2 style="text-align: center;">Guestbook</h2>
+  <textarea id="message" placeholder="Write a message..." rows="4"></textarea>
+  <button type="button" onclick="postToGuestbook()">Post Message</button>
+
+  <div id="messages"></div>
+</div>
+
+<script>
+  function login() {
+    // 로그인 처리 로직 추가
+    alert('Login button clicked');
+    // Guestbook을 표시
+    showGuestbook();
+  }
+
+  function showGuestbook() {
+    document.getElementById('signupForm').style.display = 'none';
+    document.getElementById('forgotUsernameForm').style.display = 'none';
+    document.getElementById('forgotPasswordForm').style.display = 'none';
+    document.getElementById('guestbook').style.display = 'block';
+    loadGuestbookMessages();
+  }
+
+  function showSignUpForm() {
+    document.getElementById('signupForm').style.display = 'block';
+    document.getElementById('forgotUsernameForm').style.display = 'none';
+    document.getElementById('forgotPasswordForm').style.display = 'none';
+    document.getElementById('guestbook').style.display = 'none';
+  }
+
+  function hideSignUpForm() {
+    document.getElementById('signupForm').style.display = 'none';
+  }
+
+  function signUp() {
+    // 회원가입 처리 로직 추가
+    alert('Sign Up button clicked');
+    // 로그인 화면으로 전환
+    showLoginForm();
+  }
+
+  function showForgotUsernameForm() {
+    document.getElementById('forgotUsernameForm').style.display = 'block';
+    document.getElementById('signupForm').style.display = 'none';
+    document.getElementById('forgotPasswordForm').style.display = 'none';
+    document.getElementById('guestbook').style.display = 'none';
+  }
+
+  function hideForgotUsernameForm() {
+    document.getElementById('forgotUsernameForm').style.display = 'none';
+  }
+
+  function recoverUsername() {
+    // 아이디 찾기 처리 로직 추가
+    alert('Recover Username button clicked');
+    // 로그인 화면으로 전환
+    showLoginForm();
+  }
+
+  function showForgotPasswordForm() {
+    document.getElementById('forgotPasswordForm').style.display = 'block';
