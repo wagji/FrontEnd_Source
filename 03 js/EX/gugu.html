@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplication Table</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      text-align: center;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <table id="multiplicationTable"></table>
+
+  <script>
+    function generateMultiplicationTable(rows, cols) {
+      const table = document.getElementById('multiplicationTable');
+
+      for (let i = 1; i <= rows; i++) {
+        const row = table.insertRow();
+
+        for (let j = 1; j <= cols; j++) {
+          const cell = row.insertCell();
+          const result = i * j;
+          cell.textContent = `${i} * ${j} = ${result}`;
+        }
+      }
+    }
+
+    // Adjust rows and cols based on your needs
+    const rows = 9; // You can change this to the desired number of rows
+    const cols = 9; // You can change this to the desired number of columns
+
+    generateMultiplicationTable(rows, cols);
+  </script>
+</body>
+</html>

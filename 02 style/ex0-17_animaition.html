@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>점핑볼 만들기</title>
+    <style>
+        @keyframes bounce {
+            from,
+            to {
+                bottom: 0px;
+                animation-timing-function: linear;
+                /* 'animation-timing-function' 대신 'animation-timing-function' 오타 수정 */
+            }
+            50% {
+                bottom: 200px;
+                animation-timing-function: ease-in;
+                /* 'animation-timin-function' 대신 'animation-timing-function' 오타 수정 */
+            }
+        }
+        
+        div {
+            position: absolute;
+            border: 1px solid aqua;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            animation: bounce 2s infinite;
+            /* 'animation' 속성에 duration 추가 및 infinite로 설정하여 계속 반복되도록 수정 */
+            animation-iteration-count: infinite;
+        }
+        
+        #b1 {
+            left: 10px;
+            /* '10p' 대신 '10px'로 수정 */
+            background-color: red;
+            animation-duration: 1s;
+        }
+        
+        #b2 {
+            left: 50px;
+            /* '50p' 대신 '50px'로 수정 */
+            background-color: black;
+            animation-duration: 2s;
+            /* '51s' 대신 '5s'로 수정 */
+        }
+        
+        #b3 {
+            left: 90px;
+            /* '90p' 대신 '90px'로 수정 */
+            background-color: blue;
+            animation-duration: 3s;
+            /* '15s' 대신 '5s'로 수정 */
+        }
+        
+        #b4 {
+            left: 120px;
+            background-color: green;
+            animation-duration: 4s;
+            /* '31s' 대신 '5s'로 수정 */
+        }
+        
+        #b5 {
+            left: 150px;
+            background-color: yellow;
+            animation-duration: 5s;
+            /* '25s' 대신 '5s'로 수정 */
+        }
+        
+        #b6 {
+            left: 190px;
+            background-color: skyblue;
+            animation-duration: 6s;
+            /* '1s' 대신 '5s'로 수정 */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="b1"></div>
+    <div id="b2"></div>
+    <div id="b3"></div>
+    <div id="b4"></div>
+    <div id="b5"></div>
+    <div id="b6"></div>
+</body>
+
+</html>

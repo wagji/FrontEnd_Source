@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변화 속성 : transition </title>
+    <style> 
+        div {
+            width : 100px ; 
+            height : 100px ; 
+            background-color: gold;
+            border : 1px solid red ; 
+
+            transition: width 2s ,background-color 2s, height 2s , border 2s, transform 2s;
+
+        }
+        div:hover {
+            width : 200px ; 
+            height : 200px ; 
+            border : 3px solid blue; 
+            background-color: blue;
+            transform: rotate(270deg);
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div> 마우스를 올리면 변화가 일어납니다. </div>
+
+    
+</body>
+</html>

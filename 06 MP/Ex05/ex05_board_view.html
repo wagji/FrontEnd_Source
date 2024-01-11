@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>board_view</title>
+    <style>
+        #wrap {
+            /*
+            border: 1px solid red;
+            */
+            width: 70%;
+            margin: 0 auto;
+        }
+        header {
+            /*
+            border: 1px solid purple;
+            */
+            width: 100%;
+            height: 100px;
+        }
+        aside {
+            /*
+            border: 1px solid palegreen;
+            */
+            width: 20%;
+            float: left;
+        }
+        main {
+            /*
+            border: 1px solid purple;
+            */
+            width: 80%;
+            margin-left: 20%;
+        }
+        footer {
+            /*
+            border: 1px solid blue;
+            */
+            width: 100%;
+            height: 100px;
+        }
+        .clear {
+            clear: both;
+        }
+        .d1 {   /* 헤더 로고 */
+            /*
+            border: 1px solid black;
+            */
+            width: 18%;
+            margin-left: 20px;
+            margin-top: 20px;
+            float: left;
+        }
+        .d2 {   /* 헤더 우측 메뉴 */
+            /*
+            border: 1px solid black;
+            */
+            width: 78%;
+            margin-left: 20px;
+            float: left;
+            position: relative;
+        }
+        #p1 {
+            text-align: right;
+            margin-right: 3%;
+        }
+        .image-container {
+            vertical-align: middle;
+        }
+        .text-overlay1 {
+            position: absolute;
+            top: 50%;
+            left: 47%;
+            width: 100%;
+            transform: translate(-50%, 30%);
+            color: white;
+            font-size: 18px;
+            font-weight: bolder;
+            margin-left: 25px;
+            float: left;
+            text-align: center;
+        }
+        .text-overlay2 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            transform: translate(-50%, -70%);
+            color: black;
+            font-size: 18px;
+            font-weight: bolder;
+            margin-left: 25px;
+            float: left;
+            text-align: left;
+        }
+        .d3 {   /* aside 로그인 영역 */
+            /*
+            border: 1px solid black;
+            */
+            width: 88%;
+            margin-left: 10px;
+            margin-top: 10px;
+            float: left;
+        }
+        .d3-1 {     /* 로그인 박스 */
+            border: 1px solid darkgray;
+            padding: 7px;
+            border-radius: 10px;
+            width: 94%;
+            background-color: #eeeeee;
+        }
+        .d3-2 {   /* aside 커뮤니티 영역 */
+            /*
+            border: 1px solid black;
+            */
+            width: 88%;
+            margin-left: 10px;
+            margin-top: 10px;
+            float: left;
+            position: relative;
+        }
+        .d4 {
+            width: 88%;
+            margin-left: 10px;
+            margin-top: 10px;
+            float: left;
+            border:1px solid darkgray;
+            border-radius: 10px;
+        }
+        .d4-1 {
+            padding: 7px;
+        }
+        .d5 { /* main 1 상단배너 */
+            /*
+            border: 1px solid black;
+            */
+        }
+        .d6 { /* main 2 자유게시판 */
+            /*
+            border: 1px solid black;
+            */
+            margin: 0 auto;
+            width: 97%;
+        }
+        .d6-1 {
+            text-align: center;
+        }
+        .d7 {
+            padding: 10px;
+            border-top: 1px solid gray;
+            background-color: #eeeeee;
+        }
+        .d7_1 {
+            vertical-align: text-top;         
+        }
+        .main_t1 {
+            /*
+            border: 1px solid blue;
+            */
+            border-collapse: collapse;
+        }
+        .main_t2 {
+            border-top: 1px solid gray;
+            background-color: lightgray;
+        }
+        .main_t2_1 {
+            border-top: 1p-x solid#888888;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-bottom: 10px;
+        }
+        .main_t3 {
+            border-bottom: 1px solid gray;
+            padding-left: 10px;
+            padding-top: 20px;
+            padding-bottom: 10px;;
+        }
+        #t_title {
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        
+        .d9 {
+            border:1px solid gray;
+            margin-top: 10px;
+            width: 99%;
+            height: 200px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .d10 {
+            margin-left: 10px;
+            margin-top: 5px;
+            width: 25%;
+            float: left;
+        }
+        header tr td {
+            /*
+            border: 1px solid blue;
+            */
+        }
+        aside tr td {
+            /*
+            border: 1px solid blue;
+            */
+        }
+        .t1 {
+            /*
+            border: 1px solid darkgray;
+            */
+            background-color: white;
+        }
+        main tr td {
+            /*
+            border: 1px solid blue;
+            */
+        }
+        footer tr td {
+            /*
+            border: 1px solid blue;
+            */
+        }
+        .footer_t1 {
+            width: 100%;
+        }
+        .clear {
+            clear: both;
+        }
+        .i1 {
+            margin-left: 20px;
+        }
+        .i2 {
+            padding-left: 74%;
+        }
+        .i3 {
+            margin-left: 60px;
+        }
+        .l1{
+            margin-top: 2px;
+        }
+        .c3{
+            font-size: 18px;
+        }
+    
+    </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <header>
+                <div class="d1">
+                    <a href="ex05_index.html"><img width="70%" src="img/logo.png"></a>
+                </div>
+                <div class="d2">
+                    <p id="p1">HOME | LOGIN | JOIN | NOTICE</p>
+                    <div class="image-container">
+                        <img width="100%" src="img/main_menu_bg.png">
+                    </div>
+                    <table class="text-overlay1">
+                        <tr class="c3">
+                            <td width="20%"><a href="ex05_board_list.html">자유게시판</a></td>
+                            <td width="20%">기타 소개</td>
+                            <td width="20%">공동 구매</td>
+                            <td width="20%">연주회 안내</td>
+                            <td width="20%">회원 게시판</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="clear"></div>
+                </table>
+            </header>
+            <aside>
+                <div class="d3">
+                    <div class="d3-1">
+                        <img width="80%" src="img/ttl_login.png"><br>
+                        <table width="100%">
+                            <tr>
+                                <td class="t1"></td>
+                                <td rowspan="2" width="20%"><img src="img/btn_login.gif"></td></tr>
+                            <tr>
+                                <td class="t1"></td>
+                            </tr>
+                        </table>
+                        <img width="90%" src="img/btn_search.gif">
+                    </div>
+                </div>
+                <div class="d3-2">
+                    <div class="image-container">
+                        <img width="100%" src="img/sub_menu_bg.png">
+                    </div>
+                    <div class="text-overlay2">
+                        + 자유게시판<br>
+                        + 방명록<br>
+                        + 공지사항<br>
+                        + 등업 요청<br>
+                        + 포토갤러리
+                    </div>
+                </div>
+                <div class="d4">
+                    <div class="d4-1">
+                        <img width="100%" src="img/banner1.png"><br>
+                        <img width="100%" src="img/banner2.png"><br>
+                        <img width="100%" src="img/banner3.png">
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </aside>
+            <main>
+                <div class="d5"> <!-- main 1 상단배너 -->
+                    <br>
+                    <img class="i1" width="95%" src="img/comm.gif">
+                    <br>
+                </div>
+                <div class="d6">
+                    <table width="100%" class="main_t1">
+                        <tr>
+                            <td colspan="5"><span id="t_title">자유게시판</span><br><br></td>
+                        </tr>
+                        <tr class="main_t2">
+                            <td colspan="5" width="65%">
+                                <table class="main_t2_1" width="100%">
+                                    <tr>
+                                        <td width="65%">까스릉 님의 선물인 보드카가 정말 독하네요!!!</td>
+                                        <td>루바토 | 조회 : 208 | 2024-01-06 (19:43)</td>
+                                    </tr>
+                                </table>
+                                   
+                            </td>
+                        </tr>
+                    </table>
+                    <table width="100%" class="main_t1">
+                        <tr>
+                            <td height="35px" class="main_t3">
+                                까스릉님 고맙습니다. <br>
+                                까스릉님 고맙습니다. <br>
+                                까스릉님 고맙습니다. <br>
+                                까스릉님 고맙습니다. <br>
+                                까스릉님 고맙습니다.
+                            </td>
+                        </tr>
+                       
+                    </table>
+                    <div class="d7">
+                        <img class="d7_1" src="img/title_comment.gif">&nbsp;
+                        <textarea class="d7_1" rows="5" cols="88"></textarea>&nbsp;
+                        <img class="d7_1" src="img/ok_ripple.gif">
+                    </div>
+                    <br>
+                    <table width="100%">
+                        <tr>
+                            <td></td>
+                            <td width="22%">
+                                <img src="img/delete.png">
+                                <a href="ex05_board_list.html"><img src="img/list.png"></a>
+                                <a href="ex05_board_write.html"><img src="img/write.png"></a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="clear"></div>
+            </main>
+            <br>
+            <hr>
+            <footer>
+                <table class="footer_t1">
+                    <tr>
+                        <td width="20%"></td>
+                        <td width="20%"><img src="img/footer_logo.gif"></td>
+                        <td width="35%">서울시 강남구 삼성동 1234 우: 123-1234<br>
+                                        TEL : 031-123-1234 Email : email@domain.com<br>
+                                        COPYRIGHT(C) 루바토 ALL RIGHTS RESERVED</td>
+                        <td width="17%"></td>
+                        <td width="8%"><img src="img/facebook.gif">
+                                        <img src="img/blog.gif">
+                                        <img src="img/twitter.gif"></td>
+                    </tr>
+                    
+
+                </table>
+
+            </footer>
+        </div>
+    </body>
+</html>

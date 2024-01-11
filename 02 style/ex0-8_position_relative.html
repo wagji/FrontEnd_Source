@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positon : relative, absolute, fixed</title>
+    <style>
+        .grand-parent {
+            border: 5px dotted lightsalmon;
+            height: 500px;
+            padding : 50px;
+        }
+        .parent {
+            border: 5px dotted lightslategray;
+            height: 500px;
+            padding: 10px;
+
+            position: relative;
+            top: 100px;
+            left: 100px;
+        }
+        .child {
+            border: 3px dotted lightseagreen;
+            width: 150px;
+            height: 100px;
+            border-radius: 12px;
+            background-color: aqua;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .relative {
+            /*
+             기준점 : 자신의 원본 위치
+             원본의 박스는 그대로 유지
+            */
+            position: relative;
+            left: 100px;
+            top: 100px;
+        }
+        .absolute {
+            /*
+            자신의 원본 블락이 업서짐
+            부모를 기준점으로 잡아서 이동
+            */
+            position: absolute;
+            left: 200px;
+            top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="grand-parent">
+        <div class="parent">
+            <div class="child">1</div>
+            <div class="child relative">2</div>
+            <div class="child">3</div>
+        </div>
+    </div>
+
+</body>
+</html>

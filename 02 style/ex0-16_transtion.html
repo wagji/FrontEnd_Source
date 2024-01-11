@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+            border: 1px solid rebeccapurple;
+            margin: 10px;
+            transition: width 2s, height 2s, border 2s, transform 2s;
+        }
+        
+        div:hover {
+            width: 300px;
+            height: 200px;
+            border: 3px solid black;
+            transform: rotate(300deg);
+        }
+        
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background-color: gold;
+            border: 1px solid rebeccapurple;
+            margin: 10px;
+            transition: width 2s;
+            /* transition 속성 추가 */
+        }
+        
+        #box1:hover {
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>transition을 사용하지 않았을 때</h2>
+    <hr />
+    <div>마우스를 올리면 변화가 일어납니다.</div>
+    <h2>transition을 사용했을 때</h2>
+    <div id="box1">마우스를 올리면</div>
+</body>
+
+</html>

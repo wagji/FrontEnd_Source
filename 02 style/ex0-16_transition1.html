@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+        div {
+            width: 100px; 
+            height:100px; 
+            background-color: gold;
+            border : 1px solid red; 
+            margin : 10px ; 
+        }
+        div:hover{
+            width : 300px ; 
+        }
+
+        #box1 {
+            width: 100px; 
+            height:100px; 
+            background-color: gold;
+            border : 1px solid red; 
+            margin : 10px ; 
+
+            /* 변화 속성 : transition */ 
+            transition: width 2s ;
+        }
+        #box1:hover {
+            width : 300px; 
+        }
+    
+    </style>
+</head>
+<body>
+    <h2> transition 속성을 사용 하지 않았을때 </h2>
+    <hr> 
+    <div> 마우스를 올리면 변화가 일어납니다. </div>
+
+    <br> <br> <br> 
+
+    <h2> transition 속성을 사용했을 때 </h2>
+    <hr> 
+    <div id = "box1"> 마우스를 올리면 변화가 일어납니다. </div>
+
+    
+</body>
+</html>

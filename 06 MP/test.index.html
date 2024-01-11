@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotel and Flight Reservation</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            list-style-type: none;
+        }
+        
+        body {
+            font-family: "맑은 고딕", "돋움";
+            font-size: 100%;
+        }
+        
+        [class*="c_"] {
+            float: left;
+            padding: 10px;
+        }
+        /* 너비가 600픽셀 미만인 스마트폰을 위한 기본 설정 */
+        
+        [class*="c_"] {
+            width: 100%;
+        }
+        /* 너비가 600픽셀 이상인 태블릿을 위한 설정 */
+        
+        @media only screen and (min-width: 600px) {
+            .c_m_1 {
+                width: 8.33%;
+            }
+            .c_m_2 {
+                width: 16.66%;
+            }
+            .c_m_3 {
+                width: 25%;
+            }
+            .c_m_4 {
+                width: 33.33%;
+            }
+            .c_m_5 {
+                width: 41.66%;
+            }
+            .c_m_6 {
+                width: 50%;
+            }
+            .c_m_7 {
+                width: 58.33%;
+            }
+            .c_m_8 {
+                width: 66.66%;
+            }
+            .c_m_9 {
+                width: 75%;
+            }
+            .c_m_10 {
+                width: 83.33%;
+            }
+            .c_m_11 {
+                width: 91.66%;
+            }
+            .c_m_12 {
+                width: 100%;
+            }
+        }
+        /* 너비가 768픽셀 이상인 데스크톱 컴퓨터, 노트북 등 */
+        
+        @media only screen and (min-width: 768px) {
+            .c_1 {
+                width: 8.33%;
+            }
+            .c_2 {
+                width: 16.66%;
+            }
+            .c_3 {
+                width: 25%;
+            }
+            .c_4 {
+                width: 33.33%;
+            }
+            .c_5 {
+                width: 41.66%;
+            }
+            .c_6 {
+                width: 50%;
+            }
+            .c_7 {
+                width: 58.33%;
+            }
+            .c_8 {
+                width: 66.66%;
+            }
+            .c_9 {
+                width: 75%;
+                font-size: 12px;
+            }
+            .c_10 {
+                width: 83.33%;
+            }
+            .c_11 {
+                width: 91.66%;
+            }
+            .c_12 {
+                width: 100%;
+            }
+        }
+        
+        header {
+            height: 80px;
+            padding: 20px;
+            background-color: #66c0e7;
+            font-size: 12px;
+        }
+        
+        aside#menu {
+            color: #ffffff;
+            font-size: 12px;
+        }
+        
+        aside#menu li {
+            padding: 10px;
+            margin: 5px 0 0 0;
+            background-color: #b52d89;
+            font-size: 12px;
+        }
+        
+        section#main {
+            padding: 15px;
+            font-size: 12px;
+        }
+        
+        section#main p {
+            padding: 5px;
+            font-size: 0.95em;
+            line-height: 130%;
+            font-size: 12px;
+        }
+        
+        aside#photos img {
+            width: 100%;
+        }
+        
+        aside#photos li {
+            margin: 5px 0 0 0;
+            font-size: 12px;
+        }
+        
+        footer {
+            height: 60px;
+            padding: 10px;
+            clear: both;
+            text-align: center;
+            background-color: #eeeeee;
+            font-size: 12px;
+        }
+        
+        body {
+            font-family: "맑은 고딕", "돋움", Arial, sans-serif;
+            background-color: #f4f4f4;
+            font-size: 12px;
+        }
+        
+        header {
+            background-color: #51cdf3;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+        }
+        
+        main {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            font-size: 12px;
+        }
+        
+        aside {
+            width: 100%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(64, 149, 228, 0.1);
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+        
+        section {
+            width: 100%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(64, 195, 255, 0.1);
+            font-size: 14px;
+        }
+        
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 12px;
+        }
+        
+        label {
+            font-weight: bold;
+        }
+        
+        input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        
+        button {
+            background-color: #28c2c7;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        
+        button:hover {
+            background-color: #07b7bd;
+            font-size: 12px;
+        }
+        
+        #hotelList {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .hotel-card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            max-width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 12px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        footer {
+            background-color: #5eadd1;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            clear: both;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            flex-shrink: 0;
+            height: 10%;
+            font-size: 12px;
+        }
+        
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        
+        .footer-logo {
+            width: 50px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        
+        #login-container,
+        #signup-container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 12px;
+        }
+        
+        .login-btn,
+        .signup-btn {
+            background-color: #54cfd3;
+            color: #333;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .login-btn:hover,
+        .signup-btn:hover {
+            background-color: #4bc2f1;
+            font-size: 12px;
+        }
+        
+        @media screen and (min-width: 768px) {
+            main {
+                flex-direction: row;
+            }
+            aside {
+                width: 30%;
+                margin-right: 20px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>호텔스 </h1>
+    </header>
+
+    <main>
+        <aside>
+            <section class="c3" id="loginSection">
+                <h2>로그인</h2>
+                <form id="loginForm">
+                    <label for="username">id:</label>
+                    <input type="text" id="username" name="username" required />
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required />
+
+                    <button type="button">로그인</button>
+                    <a href="test3.html">아이디 생성</a>
+                </form>
+            </section>
+
+            <section id="signupSection" class="hidden">
+                <h2>Sign Up</h2>
+                <form id="signupForm">
+                    <label for="newUsername">Username:</label>
+                    <input type="text" id="newUsername" name="newUsername" required />
+
+                    <label for="newPassword">Password:</label>
+                    <input type="password" id="newPassword" name="newPassword" required />
+
+                    <button type="button" onclick="signup()">Sign Up</button>
+                </form>
+            </section>
+            <div class="c9" id="login-container">
+                <h2>Login with</h2>
+                <button class="login-btn" onclick="googleLogin()">Google</button>
+                <button class="login-btn" onclick="kakaoLogin()">Kakao</button>
+                <button class="login-btn" onclick="naverLogin()">Naver</button>
+            </div>
+        </aside>
+        <section id="searchSection">
+            <h2>Find Your Perfect Hotel or Flight</h2>
+            <form id="searchForm">
+                <!-- Existing input fields -->
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required />
+
+                <label for="checkin">Check-in Date:</label>
+                <input type="date" id="checkin" name="checkin" required />
+
+                <label for="checkout">Check-out Date:</label>
+                <input type="date" id="checkout" name="checkout" required />
+
+                <label for="flightType">Flight Type:</label>
+                <select id="flightType" name="flightType">
+            <option value="oneWay">One Way</option>
+            <option value="roundTrip">Round Trip</option>
+          </select>
+
+                <!-- New input fields for departure and arrival countries -->
+                <label for="departureCountry">Departure Country:</label>
+                <input type="text" id="departureCountry" name="departureCountry" required />
+
+                <label for="arrivalCountry">Arrival Country:</label>
+                <input type="text" id="arrivalCountry" name="arrivalCountry" required />
+
+                <label for="passengers">Passengers:</label>
+                <input type="number" id="passengers" name="passengers" min="1" required />
+
+                <button type="button" onclick="searchHotels()">Search Hotels</button>
+                <button type="button" onclick="searchFlights()">
+            Search Flights
+          </button>
+            </form>
+
+            <div id="hotelList">
+                <!-- Hotel or flight search results will be displayed here -->
+            </div>
+        </section>
+
+        <aside id="photos" class="c_m_12 c_3">
+            <h4></h4>
+            <ul>
+                <li><img src="image/yard-3397197_1920.jpg" /></li>
+                <li><img src="image/singapore-1927719_1280.jpg" /></li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <img src="footer-logo.png" alt="Company Logo" class="footer-logo" />
+        <p>&copy; 2024 Hotel and Flight Reservation. All rights reserved.</p>
+        <nav>
+            <a href="#">도움말</a>
+            <a href="#">개인정보설정</a>
+
+            <a href="#">쿠키정책</a>
+            <a href="#">개인정보처리방침</a>
+            <a href="#">회사정보</a>
+            <a href="#">파트너</a>
+            <a href="#">여행일정</a>
+        </nav>
+    </footer>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

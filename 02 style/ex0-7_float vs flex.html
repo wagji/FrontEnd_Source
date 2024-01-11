@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float vs Flex</title>
+</head>
+<style>
+    * {margin: 0; padding: 0;}
+    .f1, .wrap {
+        border: 1px solid red;
+        width: 1000px;
+        margin: 0 auto;
+        
+    }
+    .f2 {
+        float: left;
+        border: 1px solid blue;
+        width: 100px;
+        height: 100px;
+        margin : 30px;
+    }
+    .c1 {
+        border: 1px solid aqua;
+        display: flex;
+        justify-content: space-between;
+    }
+    .c2 {
+        border: 1px solid aqua;
+        display: flex;
+        justify-content: space-around;
+    }
+    .c3 {
+        border: 1px solid aqua;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .c4 {
+        border: 1px solid aqua;
+        height: 200px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    .c1 div, .c2 div, .c3 div, .c4 div {
+        border: 1px solid red;
+    }
+    .clear {
+        clear: both;
+    }
+</style>
+<body>
+    <h2 style="width:1000px; margin:0 auto;"> Float으로 처리 </h2>
+    <hr style="width:1000px; margin:0 auto;">
+    <div class="f1">
+        <div class="f2">1 </div>
+        <div class="f2">2 </div>
+        <div class="f2">3 </div>
+        <div class="f2">4 </div>
+        <div class="f2">5 </div>
+        <div class="f2">6 </div>
+        
+        <div class="clear"></div>
+    </div>
+    <br>
+    <div class="wrap">
+        <hr>
+        <h2> display: flex & justify-content: space-between</h2>
+        <hr>
+        <br><br><br>
+        <div class="c1">
+            <div>박스 1</div>
+            <div>박스 2</div>
+            <div>박스 3</div>
+            <div>박스 4</div>
+            <div>박스 5</div>
+        </div>
+        <br><br><br>
+        <hr>
+        <h2> display: flex & justify-content: space-around</h2>
+        <hr>
+        <br><br><br>
+        <div class="c2">
+            <div>박스 1</div>
+            <div>박스 2</div>
+            <div>박스 3</div>
+            <div>박스 4</div>
+            <div>박스 5</div>
+        </div>
+        <br><br><br>
+        <hr>
+        <h2> display: flex & justify-content: space-evenly</h2>
+        <hr>
+        <br><br><br>
+        <div class="c3">
+            <div>박스 1</div>
+            <div>박스 2</div>
+            <div>박스 3</div>
+            <div>박스 4</div>
+            <div>박스 5</div>
+        </div>
+        <br><br><br>
+    </div>
+    <br>
+    <div class="wrap">
+        <hr>
+        <h2> display: flex & align-items: center (수직 정렬)</h2>
+        <hr>
+        <br><br><br>
+        <div class="c4">
+            <div>박스 1</div>
+            <div>박스 2</div>
+            <div>박스 3</div>
+            <div>박스 4</div>
+            <div>박스 5</div>
+        </div>
+        <br><br><br>
+    </div>
+</body>
+</html>
