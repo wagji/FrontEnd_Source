@@ -2,84 +2,197 @@
 <html lang="en">
 
 <head>
-    <!-- Head content remains the same as in your original code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Dobro dosli u najbolji kafic na svetu">
+    <meta name="keywords" content="Kafic">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Hotel BT - About</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "맑은 고딕", "돋움", Arial, sans-serif;
+            font-size: 12px;
+            background-color: #333;
+            color: #ccc;
+        }
+
+        .clr {
+            width: 800px;
+        }
+
+        [class*="c_"] {
+            float: left;
+            padding: 10px;
+            width: 100%;
+        }
+
+        @media only screen and (min-width: 600px) {
+            .c_m_1 { width: 8.33%; }
+            .c_m_2 { width: 16.66%; }
+            .c_m_3 { width: 25%; }
+            .c_m_4 { width: 33.33%; }
+            .c_m_5 { width: 41.66%; }
+            .c_m_6 { width: 50%; }
+            .c_m_7 { width: 58.33%; }
+            .c_m_8 { width: 66.66%; }
+            .c_m_9 { width: 75%; }
+            .c_m_10 { width: 83.33%; }
+            .c_m_11 { width: 91.66%; }
+            .c_m_12 { width: 100%; }
+        }
+
+        @media only screen and (min-width: 768px) {
+            .c_1 { width: 8.33%; }
+            .c_2 { width: 16.66%; }
+            .c_3 { width: 25%; }
+            .c_4 { width: 33.33%; }
+            .c_5 { width: 41.66%; }
+            .c_6 { width: 50%; }
+            .c_7 { width: 58.33%; }
+            .c_8 { width: 66.66%; }
+            .c_9 { width: 75%; font-size: 12px; }
+            .c_10 { width: 83.33%; }
+            .c_11 { width: 91.66%; }
+            .c_12 { width: 100%; }
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        nav {
+            background-color: #333;
+        }
+
+        .container {
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        #about-info {
+            background-color: #eee;
+            color: #333;
+            padding: 20px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            font-size: 12px;
+            background-color: #333;
+            color: #ccc;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 12px;
+            background-color: #333;
+            color: #ccc;
+        }
+
+        label {
+            font-weight: bold;
+            background-color: #333;
+            color: #ccc;
+        }
+
+        input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        button:hover {
+            background-color: #333;
+            font-size: 12px;
+            color: #ccc;
+        }
+
+        #testimonials {
+            height: 20%;
+            background: url('../img/test-bg.jpg') no-repeat center center/cover;
+            padding-top: 100px;
+            width: 100%;
+            color: #ccc;
+        }
+
+        .testimonial {
+            background-color: #333;
+            padding: 20px;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+    </style>
 </head>
 
 <body>
     <header>
-        <h1>Hotel Reservation System</h1>
+        <nav id="navbar">
+            <div class="container">
+                <h1 class="logo"><a href="index.html">HOTELS</a></h1>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="current" href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
-    <main>
-        <aside>
-            <!-- Login and Signup sections remain the same as in your original code -->
-        </aside>
-
-        <section id="searchSection">
-            <h2>Find Your Perfect Hotel</h2>
-            <form id="searchForm">
-                <!-- Existing input fields remain the same as in your original code -->
-
-                <button type="button" onclick="searchHotels()">Search Hotels</button>
-            </form>
-
-            <div id="hotelList">
-                <!-- Hotel search results will be displayed here -->
+    <section id="about-info" class="bg-light py-3">
+        <div class="container">
+            <div class="info-left">
+                <h1 class="l-heading"> <span class="text-primary">About</span> our Hotel </h1>
             </div>
-        </section>
+            <div class="info-right">
+                <img src="./img/at.jpg" alt="Hotel">
+            </div>
+        </div>
+    </section>
 
-        <aside id="photos" class="c_m_12 c_3">
-            <!-- Photo section remains the same as in your original code -->
-        </aside>
+    <main>
+        <form id="signupForm">
+            <!-- Your form content goes here -->
+        </form>
     </main>
 
-    <footer>
-        <img src="footer-logo.png" alt="Company Logo" class="footer-logo" />
-        <p>&copy; 2024 Hotel Reservation System. All rights reserved.</p>
-        <nav>
-            <!-- Footer navigation remains the same as in your original code -->
-        </nav>
-    </footer>
-
-    <script src="script.js"></script>
-
-    <script>
-        // Placeholder function for searching hotels
-        function searchHotels() {
-            // Add your logic to fetch and display hotel results here
-            console.log('Searching for hotels...');
-        }
-
-        // Placeholder function for handling user login
-        function login() {
-            // Add your logic for user login here
-            console.log('User logged in.');
-        }
-
-        // Placeholder function for handling user signup
-        function signup() {
-            // Add your logic for user signup here
-            console.log('User signed up.');
-        }
-
-        // Placeholder function for handling Google login
-        function googleLogin() {
-            // Add your logic for Google login here
-            console.log('User logged in with Google.');
-        }
-
-        // Placeholder function for handling Kakao login
-        function kakaoLogin() {
-            // Add your logic for Kakao login here
-            console.log('User logged in with Kakao.');
-        }
-
-        // Placeholder function for handling Naver login
-        function naverLogin() {
-            // Add your logic for Naver login here
-            console.log('User logged in with Naver.');
-        }
-    </script>
+    <section id="testimonials" class="py-3">
+        <div class="container">
+            <h2 class="l-heading ">What our guests say</h2>
+            <div class="testimonial bg-primary">
+                <img src="./img/person-1.jpg" alt="Samanta">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, eveniet! Possimus neque nobis quis cum tenetur harum error exercitationem ab, quia obcaecati illo praesentium, dolore inventore suscipit iusto laborum nostrum ratione, illum aliquid repellat quas impedit. Voluptatum omnis voluptatem assumenda.</p>
+            </div>
+            <div class="testimonial bg-primary">
+                <img src="./img/person-2.jpg" alt="Jen">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, eveniet! Possimus neque nobis quis cum tenetur harum error exercitationem ab, quia obcaecati illo praesentium, dolore inventore suscipit iusto laborum nostrum ratione, illum aliquid repellat quas impedit. Voluptatum omnis voluptatem assumenda.</p>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>

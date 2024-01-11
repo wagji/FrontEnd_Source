@@ -12,7 +12,7 @@ html  body{
  line-height: 1,7em;
 }
 a{
-    color:#333;
+    color:#fff;
     text-decoration: none;
 }
 h1,h2,h3 {
@@ -32,11 +32,13 @@ p{
 }
 
 .text-primary{
-    color:#f7c08a;
+    color:#fff;
 }
 
 .lead{
     font-size:20px;
+    color:#fff;
+
 }
 
 .btn{
@@ -50,12 +52,12 @@ p{
 }
 
 .btn:hover{
-    background:#f7c08a;
-    color:#333
+    background:#333;
+    color:#fff;
 }
 .btn-light {
-    background: #f4f4f4;
-    color: #333;
+    background:#333;
+    color:#fff;
   }
   
   .bg-dark {
@@ -64,13 +66,14 @@ p{
   }
   
   .bg-light {
-    background: #f4f4f4;
-    color: #333;
+    background:#333;
+    color:#fff;
   }
   
   .bg-primary {
-    background: #f7c08a;
-    color: #333;
+    background:#333;
+    color:#fff;
+
   }
   .clr{
       clear:both;
@@ -118,26 +121,28 @@ p{
 #navbar ul li a:hover,
  #navbar ul li a.current{
     background:#444;
-    color:#f7c08a;
+    color:#fff;
 }
 
 /* showcase */
 
 #showcase{
-    background-image: url('../img/showcase.jpg'); no-repeat 
+    background-image: url('../img/rom.jpg'); no-repeat 
     center center/cover;
-    height: 1050px;
+    height: 500px;
+    
     
 }
 
 #showcase .showcase-content{
     color:#fff;
     text-align:center;
-    padding-top:500px;
+    padding-top:70px;
+    width: 0 auto;
 }
 
 #showcase .showcase-content h1{
-    font-size:75px;
+    font-size:50px;
     line-height:1.2em;
 }
 
@@ -146,14 +151,17 @@ p{
     line-height: 1.7em;
 }
 #home-info {
-    height: 400px;
+    height: 600px;
+    width: 1000px;
   }
   
   #home-info .info-img {
     float: left;
     width: 50%;
-    background: url('../img/photo-1.jpg') no-repeat;
+    background: url('../img/pt.jpg') no-repeat;
     min-height: 100%;
+    align-items: center;
+
     
   }
   
@@ -196,21 +204,21 @@ p{
 
 #about-info .info-right img{
     display:block;
-    margin:auto;
-    width:70%;
-    border-radius:50%;
+    width:100%;
+    float: left;
 }
 #testimonials{
-    height:600px;
+    height:20%;
     background:url('../img/test-bg.jpg') no-repeat center center/cover;
     padding-top:100px;
+    width: 20%;
+    float: left;
+
 }
 
 #testimonials .testimonial img{
     width:100px;
     float:left;
-    margin-right:40px;
-    border-radius:50%;
 }
 
 #testimonials  h2{
@@ -226,7 +234,6 @@ p{
     opacity: 0.85;
 }
 #contact-form .form-group{
-    mairgin-bottom:20px;
 }
 #contact-form label{
     display:block;

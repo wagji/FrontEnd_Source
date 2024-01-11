@@ -1,116 +1,201 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
-    <title>hotelbooking</title>
-    <link rel="shortcut icon" type="image⁄x-icon" href="/static/images/logo/logo-cabin.png" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <!-- 폰트 -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to the most extraordinary hotel website">
+    <meta name="keywords" content="Hotel, Pakistani Hotel, Fancy Marquee">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" media="screen and (max-width:768px)" href="./css/mobile.css">
+    <script src="https://kit.fontawesome.com/b8b325b13d.js" crossorigin="anonymous"></script>
+    <title>Fancy Marquee | Hotel and Flight Reservation</title>
 
-    <link rel="stylesheet" type="text/css" href="/static/css/nav.css" />
-    <link rel="stylesheet" type="text/css" href="/static/css/user/info/info_review_writing.css" />
+    <style>
+        /* Styles from the first index file */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ... (rest of the styles from the first index file) ... */
+
+        /* Additional styles from the second index file */
+        body {
+            font-family: "맑은 고딕", "돋움", Arial, sans-serif;
+            background-color: #f4f4f4;
+            font-size: 12px;
+        }
+
+        header {
+            background-color: #51cdf3;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            font-size: 12px;
+        }
+
+        aside {
+            width: 100%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(64, 149, 228, 0.1);
+            margin-bottom: 20px;
+            font-size: 12px;
+        }
+
+        section {
+            width: 100%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(64, 195, 255, 0.1);
+            font-size: 14px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            font-size: 12px;
+        }
+
+        /* ... (rest of the styles from the second index file) ... */
+    </style>
 </head>
 
 <body>
-    <div class="nav_bar">리뷰작성</div>
-
-    <div class="row">
-        <div class="tray">
-            <div class="card">
-                <img src="/static/images/rooms/<%=roomInfo[0].image%>" />
+    <header>
+        <nav id="navbar">
+            <div class="container">
+                <h1 class="logo"><a href="index.html"><span class="text-primary">Fancy</span> Marquee</a></h1>
+                <ul>
+                    <li><a class="current" href="index.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
             </div>
-            <div class="img_desc">
-                <div class="interval">
-                    <%= roomInfo[0].room_name %>
-                </div>
-                <div class="interval">
-                    <%=roomInfo[0].country%>
-                </div>
-            </div>
-        </div>
-        <div class="right_line"></div>
+        </nav>
 
-        <div class="tray">
-            <div class="rate_box">
-                <div id="rate">평점</div>
-                <div class="btn_box">
-                    <button type="button" class="rate_star" rate="1"></button>
-                    <button type="button" class="rate_star" rate="2"></button>
-                    <button type="button" class="rate_star" rate="3"></button>
-                    <button type="button" class="rate_star" rate="4"></button>
-                    <button type="button" class="rate_star" rate="5"></button>
+        <div id="showcase">
+            <div class="container">
+                <div class="showcase-content">
+                    <h1><span class="text-primary">Fancy</span> Marquee</h1>
+                    <p class="lead">Enjoy your day with us</p>
+                    <a class="btn" href="About.html">About our Hotel</a>
                 </div>
             </div>
         </div>
-        <div class="right_line"></div>
+    </header>
 
-        <div class="tray">
-            <textarea class="message" placeholder="여행자들이 숙소에 대한 정보를 얻을 수 있도록 세부정보를 입력해주세요."></textarea>
-        </div>
-        <div class="right_line"></div>
+    <main>
+        <aside>
+            <section class="c3" id="loginSection">
+                <h2>로그인</h2>
+                <form id="loginForm">
+                    <label for="username">id:</label>
+                    <input type="text" id="username" name="username" required />
 
-        <div class="btn_tray">
-            <button type="button" class="confirm" data-room-id="<%= roomId %>" data-booking-id="<%= bookingId %>">
-          확인
-        </button>
-            <button type="button" class="close">닫기</button>
-        </div>
-    </div>
-    <% for(let i = 0; i < LLTime.length; i++) { %>
-        <% if(i === 0) { %>
-            <div class="dateNotation">
-                <%= LLTime[i] %>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required />
+
+                    <button type="button">로그인</button>
+                    <a href="test3.html">아이디 생성</a>
+                </form>
+            </section>
+
+            <section id="signupSection" class="hidden">
+                <h2>Sign Up</h2>
+                <form id="signupForm">
+                    <label for="newUsername">Username:</label>
+                    <input type="text" id="newUsername" name="newUsername" required />
+
+                    <label for="newPassword">Password:</label>
+                    <input type="password" id="newPassword" name="newPassword" required />
+
+                    <button type="button" onclick="signup()">Sign Up</button>
+                </form>
+            </section>
+            <div class="c9" id="login-container">
+                <h2>Login with</h2>
+                <button class="login-btn" onclick="googleLogin()">Google</button>
+                <button class="login-btn" onclick="kakaoLogin()">Kakao</button>
+                <button class="login-btn" onclick="naverLogin()">Naver</button>
             </div>
-            <% } else if(LLTime[i - 1] === LLTime[i]){ %>
-                <div class="dateNotation" hidden>
-                    <%= LLTime[i] %>
-                </div>
-                <% } else { %>
-                    <div class="dateNotation">
-                        <%= LLTime[i] %>
-                    </div>
-                    <% } %>
-                        <div class="message_form" data-item-id="<%= contents[i].id %>">
-                            <div class="message_inbox">
-                                <div style="padding-top: 0.3rem">
-                                    <div class="profile_img">
-                                        <img src="https://img.icons8.com/ios-filled/52/000000/user-male-circle.png" />
-                                    </div>
-                                </div>
-                                <div class="chat_view">
-                                    <div>
-                                        <div class="message_info">
-                                            <span class="name"><%= contents[i].sender %></span>
-                                            <span class="time"><%= contents[i].time %></span>
-                                        </div>
-                                    </div>
-                                    <div>
-                                        <% if(contents[i].sender === nickname){ %>
-                                            <div class="message_detail" id="me">
-                                                <%= contents[i].content %>
-                                            </div>
-                                            <% } else{ %>
-                                                <div class="message_detail" langCode="<%= contents[i].lang %>" translate="no">
-                                                    <%= contents[i].content %>
-                                                </div>
-                                                <div class="message_detail" langCode="none" hidden></div>
-                                                <div class="translate_btn">
-                                                    <input type="button" id="imgBtn" />
-                                                </div>
-                                                <% } %>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <% } %>
+        </aside>
+        <section id="searchSection">
+            <h2>Find Your Perfect Hotel or Flight</h2>
+            <form id="searchForm">
+                <!-- Existing input fields -->
+                <label for="location">Location:</label>
+                <input type="text" id="location" name="location" required />
 
-                            <!--get_url-->
-                            <script src="/static/js/get_url.js"></script>
-                            <!--이페이지 클릭관련, 페이지접속 초기설정 JS-->
-                            <script src="/static/js/user/info/info_review_writing.js"></script>
+                <label for="checkin">Check-in Date:</label>
+                <input type="date" id="checkin" name="checkin" required />
+
+                <label for="checkout">Check-out Date:</label>
+                <input type="date" id="checkout" name="checkout" required />
+
+                <label for="flightType">Flight Type:</label>
+                <select id="flightType" name="flightType">
+                    <option value="oneWay">One Way</option>
+                    <option value="roundTrip">Round Trip</option>
+                </select>
+
+                <!-- New input fields for departure and arrival countries -->
+                <label for="departureCountry">Departure Country:</label>
+                <input type="text" id="departureCountry" name="departureCountry" required />
+
+                <label for="arrivalCountry">Arrival Country:</label>
+                <input type="text" id="arrivalCountry" name="arrivalCountry" required />
+
+                <label for="passengers">Passengers:</label>
+                <input type="number" id="passengers" name="passengers" min="1" required />
+
+                <button type="button" onclick="searchHotels()">Search Hotels</button>
+                <button type="button" onclick="searchFlights()">Search Flights</button>
+            </form>
+
+            <div id="hotelList">
+                <!-- Hotel or flight search results will be displayed here -->
+            </div>
+        </section>
+
+        <aside id="photos" class="c_m_12 c_3">
+            <h4></h4>
+            <ul>
+                <li><img src="image/yard-3397197_1920.jpg" /></li>
+                <li><img src="image/singapore-1927719_1280.jpg" /></li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <img src="footer-logo.png" alt="Company Logo" class="footer-logo" />
+        <p>&copy; 2024 Hotel and Flight Reservation. All rights reserved.</p>
+        <nav>
+            <a href="#">도움말</a>
+            <a href="#">개인정보설정</a>
+            <a href="#">쿠키정책</a>
+            <a href="#">개인정보처리방침</a>
+            <a href="#">회사정보</a>
+            <a href="#">파트너</a>
+            <a href="#">여행일정</a>
+        </nav>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
