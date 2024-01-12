@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <p id="upspeed"></p>
+        <p id="downspeed"></p>
+        <script>
+        var car={
+        name: 'Sonata',
+        speed: 100,
+        color: 'white',
+        speedup: function(a) {
+        var sp=this.speed+a;
+        if(sp>=300) {
+        sp=50;
+        return sp;
+        }
+        else {
+        return sp;
+        }
+        },
+        speeddown: function(a) {
+        var sp=this.speed-a;
+        if(sp<0) {
+        sp=0;
+        return sp;
+        }
+        else {
+        return sp;
+        }
+        }
+        };
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .row {
+                width: 420px;
+                margin: 0 auto;
+            }
+            .row li {
+                display: inline;
+            }
+            .row ul {
+                list-style-type: none;
+                margin: 0 auto;
+                padding: 0;
+            }
+            #lightbox {
+                border: 1px solid red;
+                position: fixed;
+                background-color: rgba(0, 0, 0, 0.7);
+                top: 0px;
+                left: 0px;
+                width: 50%;
+                height: 50%;
+                display: none; /* Initially hide the lightbox */
+            }
+            #lightboxImage {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <script>
+            function addImage() {
+                var img = document.createElement("img");
+                img.src = "html5.jpg";
+                img.width = 100;
+                img.height = 122;
+                document.body.appendChild(img);
+            }
+
+            function textstyle() {
+                var msg = document.getElementById("msg");
+                msg.style.color = "blue";
+                msg.style.fontSize = "30px";
+                msg.style.fontStyle = "italic";
+            }
+
+            function toggleLightbox() {
+                var lightbox = document.getElementById("lightbox");
+                lightbox.style.display =
+                    lightbox.style.display === "none" ||
+                    lightbox.style.display === ""
+                        ? "block"
+                        : "none";
+            }
+        </script>
+    </head>
+    <body>
+        <a href="#" onclick="addImage()">[이미지 추가]</a>
+        <a href="#" onclick="addImage()">[이미지 추가]</a>
+
+        <p id="msg">문서 객체 스타일 변경하기</p>
+        <input type="button" onclick="textstyle()" value="텍스트 스타일 변경" />
+        <input
+            type="button"
+            onclick="toggleLightbox()"
+            value="이미지 보이기/숨기기"
+        />
+
+        <!-- 작은 이미지 출력 부분 -->
+        <div class="row">
+            <ul>
+                <li>
+                    <img
+                        src="./images/tree-1-thumb.jpg"
+                        class="pic"
+                        onclick="toggleLightbox()"
+                    />
+                </li>
+                <li>
+                    <img
+                        src="./images/tree-2-thumb.jpg"
+                        class="pic"
+                        onclick="toggleLightbox()"
+                    />
+                </li>
+                <li>
+                    <img
+                        src="./images/tree-3-thumb.jpg"
+                        class="pic"
+                        onclick="toggleLightbox()"
+                    />
+                </li>
+                <li>
+                    <img
+                        src="./images/tree-4-thumb.jpg"
+                        class="pic"
+                        onclick="toggleLightbox()"
+                    />
+                </li>
+                <li>
+                    <img
+                        src="./images/tree-5-thumb.jpg"
+                        class="pic"
+                        onclick="toggleLightbox()"
+                    />
+                </li>
+                <li>
+                    <img
+                        src="./images/tree-6-thumb.jpg"
+                        class="pic"
+                        onclick="toggleLightbox()"
+                    />
+                </li>
+                <!-- Add onclick attribute to other small images similarly -->
+            </ul>
+        </div>
+
+        <!-- 작은 이미지 클릭시 큰이미지 출력블락 -->
+        <div id="lightbox">
+            <img src="images/tree-1.jpg" id="lightboxImage" />
+        </div>
+    </body>
+</html>
