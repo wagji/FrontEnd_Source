@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <title>YTPlayer</title>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.7.1/css/jquery.mb.YTPlayer.min.css"
+        />
+        <style>
+            body, html {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                overflow: hidden;
+            }
+            #background {
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <script src="//code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.7.1/jquery.mb.YTPlayer.min.js"></script>
+        <script>
+            jQuery(function () {
+                jQuery("#background").YTPlayer();
+            });
+        </script>
+    </head>
+    <body>
+        <div
+            id="background"
+            class="player"
+            data-property="{
+                videoURL:'https://youtu.be/5nFCe_Uh1CM?si=w_FioJks-cV8R3yH',  // 원하는 유튜브 동영상 URL로 변경
+                mute: true,
+                showControls: false,
+                useOnMobile: true,
+                quality: 'highres',
+                containment: 'body',
+                loop: true,
+                autoPlay: true,
+                stopMovieOnBlur: false,
+                startAt: 0,
+                opacity: 1
+            }"
+        ></div>
+    </body>
+</html>
